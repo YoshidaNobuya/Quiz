@@ -25,11 +25,11 @@ public class Main {
 		monitor_i.checkCategory(categories, categoNum);
 
 		String c = new Scanner(System.in).nextLine();
-		c.toUpperCase();
+		int cNum = Integer.parseInt(c);
 
-		if(c.equals("YES")) {
+		if(cNum == 0) {
 
-		}else if(c.equals("NO")) {
+		}else if(cNum == 1) {
 
 		}else {
 

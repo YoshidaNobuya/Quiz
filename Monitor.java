@@ -22,11 +22,11 @@ public class Monitor {
 
 	public void checkCategory(Category[] categories, int num) {
 		System.out.println("カテゴリー" + num + ":" + categories[num].getName() +"が選択されました。");
-		System.out.print("スタートしますか？YES or NO ＞");
+		System.out.print("・スタート\t…　0\n・キャンセル\t…　1\n入力＞");
 	}
 
 	public void yesOrNo(String c) {
-		
+
 	}
 
 }

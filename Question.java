@@ -10,7 +10,7 @@ public class Question {
 			"マクロを含むExcelブックの拡張子は？",
 			"cells(1,1)と同じセル番地はどれ？",
 			"VBAの変数宣言で最初につけるのは？",
-			"2バイトの整数型　-32768～32767を表す型は？" +
+			"2バイトの整数型　-32768～32767を表す型は？",
 			"If文の始め方　If 条件式【 ？ 】命令①　～　【 ？ 】に入るのは？",
 			"命令文を記述する際の改行は？\r\n",
 			"For文　For 変数＝初期値　【 ？ 】　終値　～処理～　Next　変数　　【 ？ 】に入るのは？",
@@ -47,8 +47,8 @@ public class Question {
 	public Question(int num) {
 		this.num = num;
 		this.q = VBA_TEXT[num];
-		int a,b,c,d;
-		a = new java.util.Random().nextInt(4);
+		int a,b,c,d; 								//選択肢をランダムにするための変数を宣言
+		a = new java.util.Random().nextInt(4);		//
 		b = new java.util.Random().nextInt(4);
 		while(b == a) {
 			b = new java.util.Random().nextInt(4);

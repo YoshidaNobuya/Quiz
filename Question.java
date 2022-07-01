@@ -4,6 +4,7 @@ public class Question {
 	private int num;		//問題番号
 	private String q;		//問題文
 	private String select;	//選択肢
+	private int ans;		//正解の数字
 	private String comment;	//解説文
 
 	//VBA問題文一覧
@@ -60,6 +61,9 @@ public class Question {
 
 		//変数aにランダムで0～3の値を代入
 		a = new java.util.Random().nextInt(4);
+		if(a == 0) {		//a=0の時
+			this.ans = 1;	//答えを1に設定
+		}
 
 		//変数bにランダムで0～3の値を代入
 		b = new java.util.Random().nextInt(4);
@@ -67,16 +71,26 @@ public class Question {
 		while(b == a) {
 			b = new java.util.Random().nextInt(4);
 		}
+		if(b == 0) {		//b=0の時
+			this.ans = 2;	//答えを2に設定
+		}
 
 		c = new java.util.Random().nextInt(4);
 		//cの値がa、bの値と被らなくなるなるまでループ
 		while(c==a && c==b) {
 			c = new java.util.Random().nextInt(4);
 		}
+		if(c == 0) {		//c=0の時
+			this.ans = 3;	//答えを3に設定
+		}
+
 		d = new java.util.Random().nextInt(4);
 		//dの値がa、b、cの値と被らなくなるなるまでループ
 		while(d==a && d==b && d==c) {
 			d = new java.util.Random().nextInt(4);
+		}
+		if(d == 0) {		//d=0の時
+			this.ans = 4;	//答えを4に設定
 		}
 
 		//改行コードを使った文字列で選択肢を表現
@@ -97,6 +111,10 @@ public class Question {
 	public String getSelect() {		//選択肢の取り出し
 		return select;
 	}
+	public int getAns() {
+		return ans;
+	}
+
 	public String getComment() {	//解説文の取り出し
 		return comment;
 	}

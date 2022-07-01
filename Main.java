@@ -10,6 +10,11 @@ public class Main {
 		Category[] categories = {category_i};
 		Monitor monitor_i = new Monitor();
 
+		Question[] q10 = new Question[10];
+		for(int i = 0; i < 10; i++) {
+			q10[i] = new Question(i);
+		}
+
 		//イントロ
 		monitor_i.introduction();
 
@@ -28,10 +33,14 @@ public class Main {
 		int cNum = Integer.parseInt(c);
 
 		if(cNum == 0) {
-
+			System.out.println("スタート");
 		}else if(cNum == 1) {
 
 		}else {
+			System.out.println("入力に誤りがあります");
+		}
+
+		for(int i = 0; i < 10; i++) {
 
 		}
 	}

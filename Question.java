@@ -66,29 +66,26 @@ public class Question {
 		}
 
 		//変数bにランダムで0～3の値を代入
-		b = new java.util.Random().nextInt(4);
-		//bの値がaと同じになると同じ選択肢が2つ表示されてしまうので、aに代入された値以外が出るまでループ
-		while(b == a) {
+				//bの値がaと同じになると同じ選択肢が2つ表示されてしまうので、aに代入された値以外が出るまでループ
+		do{
 			b = new java.util.Random().nextInt(4);
-		}
+		} while(b == a) ;
 		if(b == 0) {		//b=0の時
 			this.ans = 2;	//答えを2に設定
 		}
 
-		c = new java.util.Random().nextInt(4);
 		//cの値がa、bの値と被らなくなるなるまでループ
-		while(c==a && c==b) {
+		do{
 			c = new java.util.Random().nextInt(4);
-		}
+		} while(c==a && c==b) ;
 		if(c == 0) {		//c=0の時
 			this.ans = 3;	//答えを3に設定
 		}
 
-		d = new java.util.Random().nextInt(4);
 		//dの値がa、b、cの値と被らなくなるなるまでループ
-		while(d==a && d==b && d==c) {
+		do{
 			d = new java.util.Random().nextInt(4);
-		}
+		} while(d==a && d==b && d==c) ;
 		if(d == 0) {		//d=0の時
 			this.ans = 4;	//答えを4に設定
 		}

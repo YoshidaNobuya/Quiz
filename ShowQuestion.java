@@ -2,6 +2,8 @@ package quiz5;
 
 public class ShowQuestion {
 
+	private int count;
+
 	//Questionクラス型の配列を引数にとって問題,解答,解説を表示するメソッド
 	public void Show(Question q) {
 
@@ -18,11 +20,15 @@ public class ShowQuestion {
 
 		if(ans==q.getAns()) {
 			System.out.println("正解！");
+			count++;
 		}else {
 			System.out.println("不正解… 正解は"+q.getAns()+"でした。");
 		}
 			System.out.println(q.getComment());
+	}
 
+	public int getCount() {
+		return count;
 	}
 
 }

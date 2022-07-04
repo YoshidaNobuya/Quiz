@@ -41,11 +41,14 @@ public class Main {
 			System.out.println("スタート");
 
 			ShowQuestion showQuestion_i = new ShowQuestion();
-			//問題の数だけループして問題が面を表示する
+
+			//問題の数だけループして問題画面を表示する
 			for(int i = 0; i < q10.length; i++) {
 				showQuestion_i.Show(q10[i]);
 				System.out.println();
 			}
+
+			System.out.println("正解数:"+showQuestion_i.getCount());
 
 			System.out.println("全問終了");
 		}else {

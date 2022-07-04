@@ -1,5 +1,9 @@
 package quiz5;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Question {
 	private int num;		//問題番号
 	private String q;		//問題文
@@ -58,36 +62,12 @@ public class Question {
 
 		//選択肢をランダムに配置するために４つのint型を宣言
 		int a,b,c,d;
-
-		//変数aにランダムで0～3の値を代入
-		a = new java.util.Random().nextInt(4);
-		if(a == 0) {		//a=0の時
-			this.ans = 1;	//答えを1に設定
-		}
-
-		//変数bにランダムで0～3の値を代入
-				//bの値がaと同じになると同じ選択肢が2つ表示されてしまうので、aに代入された値以外が出るまでループ
-		do{
-			b = new java.util.Random().nextInt(4);
-		} while(b == a) ;
-		if(b == 0) {		//b=0の時
-			this.ans = 2;	//答えを2に設定
-		}
-
-		//cの値がa、bの値と被らなくなるなるまでループ
-		do{
-			c = new java.util.Random().nextInt(4);
-		} while(c==a && c==b) ;
-		if(c == 0) {		//c=0の時
-			this.ans = 3;	//答えを3に設定
-		}
-
-		//dの値がa、b、cの値と被らなくなるなるまでループ
-		do{
-			d = new java.util.Random().nextInt(4);
-		} while(d==a && d==b && d==c) ;
-		if(d == 0) {		//d=0の時
-			this.ans = 4;	//答えを4に設定
+		List<Integer> sNum = Arrays.asList(0,1,2,3);
+		Collections.shuffle(sNum);
+		for(int i = 0; i < sNum.size(); i++) {
+			if(sNum.get(i) == 0) {
+				this.ans = i+1;
+			}
 		}
 
 		//改行コードを使った文字列で選択肢を表現
@@ -95,7 +75,7 @@ public class Question {
 		//2：VBAの選択肢\n
 		//3：VBAの選択肢\n
 		//4：VBAの選択肢
-		this.select = "1：" + VBA[num][a] + "\n2：" + VBA[num][b] + "\n3：" + VBA[num][c] + "\n4：" + VBA[num][d];
+		this.select = "1：" + VBA[num][sNum.get(0)] + "\n2：" + VBA[num][sNum.get(1)] + "\n3：" + VBA[num][sNum.get(2)] + "\n4：" + VBA[num][sNum.get(3)];
 
 	}
 

@@ -40,9 +40,13 @@ public class Main {
 			System.out.println("入力に誤りがあります");
 		}
 
-		for(int i = 0; i < 10; i++) {
-
+		ShowQuestion showQuestion_i = new ShowQuestion();
+		//問題の数だけループして問題が面を表示する
+		for(int i = 0; i < q10.length; i++) {
+			showQuestion_i.Show(q10[i]);
 		}
+
+
 	}
 
 }

@@ -31,7 +31,7 @@ public class Question {
 		{"Range(\"A1\")","Range(A1)","Range(A,1)","cells(A,1)"},
 		{"Dim","As","Int","Variant"},
 		{"Integer型","Int型","Double型","Long型"},
-		{"Then","Else","TRUE","'＝＝"},
+		{"Then","Else","TRUE","＝＝"},
 		{"␣_（半角スペース+半角アンダーバー）","vbCrLf","␣br","\\n"},
 		{"To","next","for","if"},
 		{"イベントプロシージャ","ユーザーフォーム","ユーザー定義関数","イベントハンドラ"},
@@ -52,10 +52,13 @@ public class Question {
 			"下方向はxlDown、右方向はxlRignt",
 			"End　の後ろにも記述するのを忘れない。"//問10の解説文
 	};
-	public Question() { }
+	public Question() {
 
-	public Question(int num) {
-		this.num = num;
+	}
+
+	//フィールドの値をセットする。
+	public void set(int num) {
+		this.num = num+1;
 		this.q = VBA_TEXT[num];
 		this.comment = VBA_COMMENT[num];
 

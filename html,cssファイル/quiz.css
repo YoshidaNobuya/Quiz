@@ -1,17 +1,45 @@
 
-#qsatement{
-	width:1000px;
-	height:120px;
-	padding :20px;
+body {
+    overflow-x: hidden;
+}
+
+#q-count{
+	font-size:20px;
+}
+#q-cate{
+	font-size:24px;
+}
+
+#q-satement{
+	width:auto;
+	height:auto;
+	font-size:30px;
+	padding :5px;
+	margin :10px auto;
 	text-align:center; /*まんなか*/
 	background: #eeeeee; /*背景色*/
 	border:solid 4px #CCCCCC; /*枠の線、色*/
-	margin :20px auto;
-	font-size:25px;
+	border-radius: 10px;
+	line-height:1.2
+	
 }
-#anserCheck{
-list-style-position:outside
-text-align:center;
-font-size:20px;
 
+.anserCheck{
+	position:relative;/*相対位置*/
+	bottom:-80px;
+	text-align:left;	
+	margin:20px 20px 10px 10px;
 }
+
+
+#choice1,#choice2,#choice3,#choice4{
+   font-size:20px;
+   text-align:left;
+   width:auto; /*枠の幅*/
+   height:auto;
+   padding:20px 10px; 
+   border:solid 4px #CCCCCC; /*枠の線、色*/
+   border-radius: 10px; /*角を丸く*/
+}
+
+

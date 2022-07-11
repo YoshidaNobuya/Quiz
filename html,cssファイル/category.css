@@ -16,7 +16,7 @@ h2{
 	margin:60px auto;
 }
 
-#ru-ru{
+.ru-ru{
 	position:relative;/*相対位置*/
 	top:30px;
 	left:100px;
@@ -30,7 +30,24 @@ h2{
 	margin :10px auto; /*上下の余白20px、左右は真ん中よせ*/
 	border-radius: 10px; /*角を丸く*/
 	}
-
+.ru-ru:before{/*疑似要素*/
+	content: ""; 
+  	position: absolute;
+  	top: 50%;
+	margin-top: -12px;
+ 	border-left: 20px solid #eeeeee;
+ 	z-index: 2;
+}
+.ru-ru::after {/*疑似要素*/
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-left: 14px solid #CCCCCC;
+  z-index: 1;
+}
 #im1{
 	position:relative;/*相対位置*/
 	top:100px;
@@ -39,6 +56,7 @@ h2{
 	font-size:18px;
 	line-height:0.5
 }
+
 
 #comment{
 	margin :30px auto;
@@ -60,13 +78,14 @@ h2{
 	
 
 #button1,#button2,#button3,#button4,#button5,#button6,#button7{
-	font-size:35px;
-	width:400px; /*枠の幅*/
+	font-size:30px;
+	width:350px;
+	height:100px; /*枠の幅*/
 	padding:5px; /*枠内の余白*/
 	text-align:center;
 	background: #eeeeee; /*背景色*/
 	border:solid 8px #cccccc; /*枠の線、色*/
-	margin :10px auto; /*上下の余白20px、左右は真ん中よせ*/
+	margin :15px auto; /*上下の余白20px、左右は真ん中よせ*/
 	border-radius: 10px; /*角を丸く*/
 
 }

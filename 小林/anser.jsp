@@ -11,7 +11,7 @@ String userSelect = (String) session.getAttribute("userSelect");
 
 //Questionから値を取り出し
 String cate = q10[count].getCate();
-String ans = q10[count].getAns();
+int ans = q10[count].getAns();
 String comment = q10[count].getComment();
 %>
 <!DOCTYPE html>

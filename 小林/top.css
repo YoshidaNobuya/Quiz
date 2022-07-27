@@ -1,0 +1,30 @@
+
+
+h1{
+ 	font-size:50px;
+ 	text-align:center;}
+
+#ru-ru{
+	width:600px; /*枠の幅*/
+	padding:10px; /*枠内の余白*/
+	text-align:center; /*まんなか*/
+	background: #eeeeee; /*背景色*/
+	border:solid 4px #CCCCCC; /*枠の線、色*/
+	margin :20px auto; /*上下の余白20px、左右は真ん中よせ*/
+	}
+
+#startbutton{
+	width:300px; /*枠の幅*/
+	height:40px; /*枠の高さ*/
+	text-align:center;
+	padding:20px 0px;
+	height:50px;
+  	line-height:15px;
+	font-size:23px;
+	border:solid 3px #CCCCCC; /*2重線にしたい*/
+
+}
+#buttonblock{
+	display: flex;
+	justify-content: center;
+}

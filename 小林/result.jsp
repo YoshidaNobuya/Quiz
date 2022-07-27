@@ -2,10 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page import="model.Question" %>
 <%
-Question[] q10 = (Question[]) session.getAttribute("question");
+Question[] q10 = (Question[]) session.getAttribute("q10");
 int seikai = (int) session.getAttribute("seikai");
 
-String cate = q10[0].getCate();
+/* //テスト表示用
+Question[] q10 = new Question[2];
+q10[0] = new Question("???", 7, "仮面ライダー電王", "モモタロス", 1,"イマジンの一種");
+int seikai = 7; */
+
+String cate = q10[0].getCategory();
 %>
 <!DOCTYPE html>
 <html>
@@ -32,7 +37,7 @@ String cate = q10[0].getCate();
 		<div id="tcome1"><p>コメント</p></div>
 		<div id="tcome2"><p>～よん太君からのありがたいお言葉～</p></div>
 	</div>
-	<div id="im3"><img src="4takunh.png" alt="よん太君（仮）"  width="280"  height="300">
+	<div id="im3"><img src="photo/4takunh.png" alt="よん太君（仮）"  width="280"  height="300">
 	<p>よん太君<p>
 	</div>
 </div>

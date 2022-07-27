@@ -8,43 +8,54 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Diary;
+import model.Question;
 
 public class QuestionDAO {
 
 	//データベース接続に使用する情報
-	private final String JDBC_URL="jdbc:h2:tcp://localhost/~/data/myProject";
-	private final String DB_USER="sa";
-	private final String DB_PASS="";
+	private final String JDBC_URL = "jdbc:h2:tcp://localhost/~/data/Yontakun";
+	private final String DB_USER = "sa";
+	private final String DB_PASS = "";
 
-	public List<Diary> findAll(){
-		List<Diary> diaryList=new ArrayList<>();
+	public List<Question> findAll(int cateNum) {
+		List<Question> questionList = new ArrayList<>();
+
+		cateNum=cateNum*1000;
+		int cateNum2=(cateNum+1)*1000;
 
 		//データベース接続
-		try(Connection conn=DriverManager.getConnection(
-				JDBC_URL,DB_USER,DB_PASS)){
+		try (Connection conn = DriverManager.getConnection(
+				JDBC_URL, DB_USER, DB_PASS)) {
 
 			//SELECT文の準備
-			String sql="SELECT ~ FROM ~";
-			PreparedStatement pStmt=conn.prepareStatement(sql);
+			String sql = "SELECT * FROM QUESTION WHERE ?<ID AND ID<?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			//SELECT文中の？に使用する値(cateNum,cateNum2)を設定
+			pStmt.setInt(1,cateNum);
+			pStmt.setInt(2,cateNum2);
 
 			//SELECTを実行
-			ResultSet rs=pStmt.executeQuery();
-
+			ResultSet rs = pStmt.executeQuery();
 
 			//SELECT文の結果をArrayListに格納
 
-			while(rs.next()) {
-				int id=rs.getInt("ID");
-				String date=rs.getString("DATE");
-				String text=rs.getString("TEXT");
-				Diary diary=new Diary(id,date,text);
-				diaryList.add(diary);
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String category = rs.getString("category");
+				String Q = rs.getString("Q");
+				String select0 = rs.getString("select0");
+				String select1 = rs.getString("select1");
+				String select2 = rs.getString("select2");
+				String select3 = rs.getString("select3");
+				String comment = rs.getString("comment");
+				Question question = new Question(id, category,Q,select0,select1,select2,select3,comment );
+				questionList.add(question);
 			}
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
-		return diaryList;
+		return questionList;
 	}
 }

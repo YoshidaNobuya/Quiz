@@ -20,7 +20,7 @@ String userSelect = "モモタロス"; */
 
 //Questionから値を取り出し
 String cate = q10[count].getCategory();
-int ans = q10[count].getAns();
+String ans = q10[count].getAns();
 String comment = q10[count].getComment();
 %>
 <!DOCTYPE html>

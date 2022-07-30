@@ -22,8 +22,7 @@ public class AnserServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String userAnsText = request.getParameter("ans");
-		int userAns = Integer.parseInt(userAnsText);
+		String userAns = request.getParameter("userAns");
 
 		String userSelect = request.getParameter("selectText");
 
@@ -34,7 +33,7 @@ public class AnserServlet extends HttpServlet {
 
 		//回答と正解を照合
 		String result = "不正解";
-		if(q10[count].getAns() == userAns) {
+		if(q10[count].getAns().equals(userAns)) {
 			result = "正解！";
 			//総正解数のカウントを１増やす
 			seikai++;

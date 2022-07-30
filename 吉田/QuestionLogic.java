@@ -8,15 +8,15 @@ import java.util.List;
 public class QuestionLogic {
 
 	// 10問抽出し、選択肢を並び替えて保存するメソッド
-	public static Question[] setQuestion(ArrayList<Question> qCate) { // qCate:データベースから取ってきたままの状態
+	public static Question[] setQuestion(ArrayList<Question> questionList) {
 
 		// 選択したカテゴリの問題をランダムに並び替える
-		Collections.shuffle(qCate);
+		Collections.shuffle(questionList);
 
 		// 選択したカテゴリの問題を10問抽出する
 		Question[] q10 = new Question[10];
 		for (int i = 0; i < 10; i++) {
-			q10[i] = qCate.get(i);
+			q10[i] = questionList.get(i);
 
 			// String型のListを生成しshuffleメソッドを使ってa,b,c,dの順番を並び替える
 			List<String> shuffleAns = Arrays.asList("a", "b", "c", "d");
@@ -51,5 +51,4 @@ public class QuestionLogic {
 		}
 		return q10;
 	}
-
 }

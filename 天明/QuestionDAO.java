@@ -18,7 +18,7 @@ public class QuestionDAO {
 	private final String DB_PASS = "";
 
 	public List<Question> findAll(int cateNum) {
-		List<Question> questionList = new ArrayList<>();
+		ArrayList<Question> questionList = new ArrayList<>();
 
 		cateNum=cateNum*1000;
 		int cateNum2=(cateNum+1)*1000;
@@ -43,13 +43,14 @@ public class QuestionDAO {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String category = rs.getString("category");
-				String Q = rs.getString("Q");
+				String text = rs.getString("text");
+				String ans=rs.getString("ans");
 				String select0 = rs.getString("select0");
 				String select1 = rs.getString("select1");
 				String select2 = rs.getString("select2");
 				String select3 = rs.getString("select3");
 				String comment = rs.getString("comment");
-				Question question = new Question(id, category,Q,select0,select1,select2,select3,comment );
+				Question question = new Question(id, category,text,ans,select0,select1,select2,select3,comment );
 				questionList.add(question);
 			}
 		} catch (SQLException e) {

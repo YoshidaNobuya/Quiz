@@ -24,7 +24,7 @@ Question[] q10 = (Question[]) session.getAttribute("q10");
 	</div>
 
 	<div id="q-satement">
-		<p><%=q10[count].getQ() %></p>
+		<p><%=q10[count].getText() %></p>
 	</div>
 
 	<div class="anserCheck">

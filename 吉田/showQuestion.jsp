@@ -29,18 +29,12 @@ Question[] q10 = (Question[]) session.getAttribute("q10");
 
 	<div class="anserCheck">
 	<%-- 選択によってリクエストパラメータa,b,c,dを仕込んでいる --%>
-		<p>
-		<div id="choice1"><a href="Yontakun/src/servlet/AnserServlet?userAns=a"><%=q10[count].getSelect0() %></a></div>
-		</p>
-		<p>
-		<div id="choice2"><a href="Yontakun/src/servlet/AnserServlet?userAns=b"><%=q10[count].getSelect1() %></a></div>
-		</p>
-		<p>
-		<div id="choice3"><a href="Yontakun/src/servlet/AnserServlet?userAns=c"><%=q10[count].getSelect2() %></a></div>
-		</p>
-		<p>
-		<div id="choice4"><a href="Yontakun/src/servlet/AnserServlet?userAns=d"><%=q10[count].getSelect3() %></a></div>
-		</p>
+
+		<div id="choice1"><p><a href="/Yontakun/AnserServlet?userAns=a"><%=q10[count].getSelect0() %></a></p></div>
+		<div id="choice2"><p><a href="/Yontakun/AnserServlet?userAns=b"><%=q10[count].getSelect1() %></a></p></div>
+		<div id="choice3"><p><a href="/Yontakun/AnserServlet?userAns=c"><%=q10[count].getSelect2() %></a></p></div>
+		<div id="choice4"><p><a href="/Yontakun/AnserServlet?userAns=d"><%=q10[count].getSelect3() %></a></p></div>
+
 	</div>
 
 </body>

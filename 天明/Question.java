@@ -4,7 +4,7 @@ public class Question {
 	private int id;		 //
 	private String category; //
 	private String text;	 //
-	private String ans="a";
+	private String ans;
 	private String select0;	 //
 	private String select1;	 //
 	private String select2;	 //

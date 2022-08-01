@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Question;
 
@@ -17,7 +16,7 @@ public class QuestionDAO {
 	private final String DB_USER = "sa";
 	private final String DB_PASS = "";
 
-	public List<Question> findAll(int cateNum) {
+	public ArrayList<Question> findAll(int cateNum) {
 		ArrayList<Question> questionList = new ArrayList<>();
 
 		cateNum=cateNum*1000;
@@ -43,8 +42,8 @@ public class QuestionDAO {
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String category = rs.getString("category");
-				String text = rs.getString("text");
-				String ans=rs.getString("ans");
+				String text = rs.getString("Q");
+				String ans="a";
 				String select0 = rs.getString("select0");
 				String select1 = rs.getString("select1");
 				String select2 = rs.getString("select2");

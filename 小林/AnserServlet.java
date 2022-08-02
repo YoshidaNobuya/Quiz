@@ -21,15 +21,35 @@ public class AnserServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println();
 		String userAns = request.getParameter("userAns");
 
-		String userSelect = request.getParameter("selectText");
+
 
 		HttpSession session = request.getSession();
 		int count = (int) session.getAttribute("count");
+		if (count == 0) {
+			session.setAttribute("seikai", 0);
+		}
 		int seikai = (int) session.getAttribute("seikai");
-		Question[] q10 = (Question[])session.getAttribute("question");
+
+		Question[] q10 = (Question[])session.getAttribute("q10");
+
+		String userSelect = "";
+		switch(userAns) {
+		case "a":
+			userSelect = q10[count].getSelect0();
+			break;
+		case "b":
+			userSelect = q10[count].getSelect1();
+			break;
+		case "c":
+			userSelect = q10[count].getSelect2();
+			break;
+		case "d":
+			userSelect = q10[count].getSelect3();
+			break;
+		}
 
 		//回答と正解を照合
 		String result = "不正解";

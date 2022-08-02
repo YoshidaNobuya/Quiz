@@ -26,7 +26,7 @@ public class ResultServlet extends HttpServlet {
 			count++;
 			session.setAttribute("count",count);
 			//ShowQuestionServletに処理をパス
-			RequestDispatcher dispatcher = request.getRequestDispatcher("Yontakun/ShowQuestionServlet");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/ShowQuestionServlet?cate=0");
 			dispatcher.forward(request, response);
 
 		}else {

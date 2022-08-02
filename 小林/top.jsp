@@ -14,17 +14,17 @@
 	<p>・ルールを記載…<br>例）・最初に問題カテゴリを選んでください。<br></p>
 </div>
 <div id="buttonblock">
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=1">Java</a></p></div>
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=2">ドキュメントと管理ツール</a></p></div>
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=3">VBA</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=1">Java</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=2">ドキュメントと管理ツール</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=3">VBA</a></p></div>
 </div>
 <div id="buttonblock">
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=4">データベース</a></p></div>
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=5">Webプログラミング</a></p></div>
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=6">サーバーサイドJava</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=4">データベース</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=5">Webプログラミング</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=6">サーバーサイドJava</a></p></div>
 </div>
 <div id="buttonblock">
-<div id="startbutton"><p><a href="Yontakun/ShowQuestion?cate=7">???</a></p></div>
+<div id="startbutton"><p><a href="/Yontakun/ShowQuestionServlet?cate=7">???</a></p></div>
 </div>
 </body>
 </html>

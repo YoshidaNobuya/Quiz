@@ -38,12 +38,12 @@ String cate = q10[0].getCategory();
 		<div id="tcome2"><p>～よん太君からのありがたいお言葉～</p></div>
 	</div>
 	<div id="im3"><img src="photo/4takunh.png" alt="よん太君（仮）"  width="280"  height="300">
-	<p>よん太君<p>
+		<p>よん太君<p>
 	</div>
 </div>
 
 <div id="topb">
-	<p><a href="Yontakun/index.html">TOPへ</a></p>
+	<p><a href="/Yontakun/index.html">TOPへ</a></p>
 </div>
 
 </body>

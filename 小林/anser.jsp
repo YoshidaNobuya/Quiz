@@ -45,13 +45,15 @@ String comment = q10[count].getComment();
 		<div id="come1"><h3>解説</h3></div>
 		<div id="come2"><p><%= comment %></p></div>
 	</div>
+	<div id="im2">
+	<img src="photo/4takunh.png" alt="よん太君（仮）"  width="280"  height="300">
+	<p>よん太君</p>
+</div>
 </div>
 
-<div id="im2">
-	<img src="photo/4takunh.png" alt="よん太君（仮）"  width="280"  height="300">
-	<p>よん太君</p>4</div>
+
 <div>
-	<p><a href="Yontakun/ResultServlet">次へ</a></p>
+	<p><a href="/Yontakun/ResultServlet">次へ</a></p>
 </div>
 
 </body>

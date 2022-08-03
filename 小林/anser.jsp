@@ -31,7 +31,7 @@ String comment = q10[count].getComment();
 <title>よん太君の4択（仮）</title>
 </head>
 <body>
-<div id="q-count"><p><%= count %>/10問目</p></div>
+<div id="q-count"><p><%= count+1 %>/10問目</p></div>
 <div id="q-cate"><p>カテゴリ：<%= cate %></p></div>
 
 <div class="answer">

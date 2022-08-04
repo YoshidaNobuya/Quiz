@@ -22,18 +22,36 @@ public class ResultServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		int count = (int) session.getAttribute("count");
 
-		if(count < 10) {
-			count++;
-			session.setAttribute("count",count);
-			//ShowQuestionServletに処理をパス
+
+		if(count == 0) {
+			session.setAttribute("dummy", "");
+		}
+		String dummy = (String) session.getAttribute("dummy");
+		String userSelect = (String) session.getAttribute("userSelect");
+		session.setAttribute("dummy", userSelect);
+
+		if (dummy.equals(userSelect)) {
+			//もう一度同じページを表示
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/ShowQuestionServlet?cate=0");
 			dispatcher.forward(request, response);
-
 		}else {
-			//リザルト画面を表示
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
-			dispatcher.forward(request, response);
+			if(count < 9) {
+				count++;
+				session.setAttribute("count",count);
+				//ShowQuestionServletに処理をパス
+				//response.sendRedirect("/ShowQuestionServlet?cate=0");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/ShowQuestionServlet?cate=0");
+				dispatcher.forward(request, response);
+
+			}else {
+				//リザルト画面を表示
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+				dispatcher.forward(request, response);
+			}
 		}
+
+
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
